@@ -327,29 +327,31 @@ body {
     text-align: left;
 }
 
+/* About list items as bordered cards instead of bullets */
 .about-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .about-list li {
+    border: 2px solid #8b5cf6;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    color: #4b5563;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-    padding-left: 0;
+    margin-bottom: 0;
     position: relative;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.04);
 }
 
 .about-list li:before {
-    content: "•";
-    color: #8b5cf6;
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: -1.5rem;
-    top: 0;
+    display: none;
 }
 
 .about-list li strong {
@@ -795,5 +797,55 @@ section {
     
     .contact-item i {
         font-size: 1.25rem;
+    }
+}
+
+/* Hide stickers on mobile to prevent overlap */
+@media (max-width: 600px) {
+    .sticker {
+        display: none !important;
+    }
+    .hero-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+    .avatar-circle {
+        width: 130px;
+        height: 130px;
+    }
+    .hero-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero-greeting {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+    }
+    .hero-name {
+        font-size: 2.1rem;
+        margin-bottom: 0.7rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+        margin-bottom: 1.2rem;
+        align-items: center;
+        width: 100%;
+    }
+    .btn {
+        width: 90vw;
+        max-width: 320px;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+    .social-icons {
+        justify-content: center;
+        gap: 0.7rem;
     }
 }
